@@ -26,7 +26,7 @@ void setup()
   lcd.clear();
   
   lcd.setCursor(0, 0);
-  lcd.print("Buna ziua!");
+  lcd.print("Hello!");
   delay(3000);
   lcd.clear();
 }
@@ -51,7 +51,7 @@ void loop()
       int secondsElapsed = elapsedTime / 1000;
 
       lcd.setCursor(0, 1);
-      lcd.print("Timp: ");
+      lcd.print("Time: ");
       lcd.print(secondsElapsed);
       lcd.print(" sec");
     }
@@ -79,7 +79,7 @@ void loop()
           lcd.clear();
           if (letter != '\0')
           {
-            lcd.print("Litera: ");
+            lcd.print("Letter: ");
             lcd.print(letter);
 
             message += letter;
@@ -90,14 +90,14 @@ void loop()
           }
           else 
           {
-            lcd.print("Cod invalid!");
+            lcd.print("Invalid Code!");
           }
           currentMessage = "";
         }
         else if (elapsedTime >= 3000)
         {
           lcd.clear();
-          lcd.print("Sir: ");
+          lcd.print("Array: ");
           lcd.setCursor(0, 1);
           lcd.print(message);
           digitalWrite(ledPin2, HIGH);
@@ -115,9 +115,9 @@ void loop()
   {
     lcd.noBacklight();
     lcd.clear();
-    lcd.print("Lumina");
+    lcd.print("Powerful");
     lcd.setCursor(0, 1);
-    lcd.print("puternica!");
+    lcd.print("light!");
     delay(1000);
     lcd.clear();
   }
@@ -151,6 +151,6 @@ char convertToAscii(String input)
   if (input == "-..-") return 'X';
   if (input == "-.--") return 'Y';
   if (input == "--..") return 'Z';
-  if (input == "----") return ' '; // caracter spatiu
+  if (input == "----") return ' ';
   return '\0';
 }
